@@ -1,0 +1,12 @@
+C:\Users\Amir\Desktop\Amlak\BusinessEntity\bin\Debug\BusinessEntity.dll
+C:\Users\Amir\Desktop\Amlak\BusinessEntity\bin\Debug\BusinessEntity.pdb
+C:\Users\Amir\Desktop\Amlak\BusinessEntity\obj\Debug\BusinessEntity.csproj.AssemblyReference.cache
+C:\Users\Amir\Desktop\Amlak\BusinessEntity\obj\Debug\BusinessEntity.csproj.CoreCompileInputs.cache
+C:\Users\Amir\Desktop\Amlak\BusinessEntity\obj\Debug\BusinessEntity.dll
+C:\Users\Amir\Desktop\Amlak\BusinessEntity\obj\Debug\BusinessEntity.pdb
+E:\Amlak\BusinessEntity\bin\Debug\BusinessEntity.dll
+E:\Amlak\BusinessEntity\bin\Debug\BusinessEntity.pdb
+E:\Amlak\BusinessEntity\obj\Debug\BusinessEntity.csproj.AssemblyReference.cache
+E:\Amlak\BusinessEntity\obj\Debug\BusinessEntity.csproj.CoreCompileInputs.cache
+E:\Amlak\BusinessEntity\obj\Debug\BusinessEntity.dll
+E:\Amlak\BusinessEntity\obj\Debug\BusinessEntity.pdb

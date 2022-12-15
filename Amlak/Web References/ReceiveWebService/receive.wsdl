@@ -1,0 +1,1518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetInboxCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isRead" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInboxCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetInboxCountResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOutBoxCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOutBoxCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetOutBoxCountResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessages">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="location" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="index" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="count" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMessagesResult" type="tns:ArrayOfMessagesBL" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMessagesBL">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MessagesBL" nillable="true" type="tns:MessagesBL" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MessagesBL">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseBL">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="MsgID" type="s:long" />
+              <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="LinkID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="NumberID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Tariff" type="s:double" />
+              <s:element minOccurs="1" maxOccurs="1" name="MsgType" type="s:unsignedByte" />
+              <s:element minOccurs="0" maxOccurs="1" name="Body" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Udh" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="SendDate" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="Sender" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Receiver" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="FirstLocation" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="CurrentLocation" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Parts" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsFlash" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsRead" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsUnicode" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="Credit" type="s:double" />
+              <s:element minOccurs="1" maxOccurs="1" name="Module" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="RecCount" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="RecFailed" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="RecSuccess" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="IsMoneyBack" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="UserStepedMaster" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="UserMaster" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="MoneyBackCount" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="MoneyBackLevel" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="AutoSpeechText" nillable="true" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="ShareServiceBodyID" nillable="true" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="IrancellBackCount" nillable="true" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BaseBL" />
+      <s:element name="GetMessagesWithChangeIsRead">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="location" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="index" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="count" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="isRead" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="changeIsRead" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessagesWithChangeIsReadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMessagesWithChangeIsReadResult" type="tns:ArrayOfMessagesBL" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeMessageIsRead">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgIds" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeMessageIsReadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChangeMessageIsReadResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessagesByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="location" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="index" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="count" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateTo" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessagesByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMessagesByDateResult" type="tns:ArrayOfMessagesBL" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessagesFilterByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="location" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="index" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="count" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateTo" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="isRead" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessagesFilterByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMessagesFilterByDateResult" type="tns:ArrayOfMessagesBL" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersMessagesByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="location" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="index" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="count" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateTo" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersMessagesByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUsersMessagesByDateResult" type="tns:ArrayOfMessagesBL" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessageStr">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="location" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="index" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="count" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessageStrResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMessageStrResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveMessages">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="location" type="tns:MessageLocation" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgIds" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="MessageLocation">
+        <s:restriction base="s:string">
+          <s:enumeration value="Received" />
+          <s:enumeration value="Sent" />
+          <s:enumeration value="Removed" />
+          <s:enumeration value="Deleted" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="RemoveMessagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RemoveMessagesResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveMessages2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="location" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgIds" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveMessages2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RemoveMessages2Result" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessagesReceptions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fromRows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessagesReceptionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMessagesReceptionsResult" type="tns:ArrayOfMsgReceptions" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMsgReceptions">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MsgReceptions" nillable="true" type="tns:MsgReceptions" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MsgReceptions">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RecNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SendDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveryStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMessagesAfterID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="location" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="count" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessagesAfterIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMessagesAfterIDResult" type="tns:ArrayOfMessagesBL" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessagesAfterIDJson">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="location" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="count" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="msgId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessagesAfterIDJsonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMessagesAfterIDJsonResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLatestReceiveMsg">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="receiver" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLatestReceiveMsgResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLatestReceiveMsgResult" type="tns:LatestMsgReport" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LatestMsgReport">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MsgID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Body" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Parts" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sender" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Receiver" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="int" type="s:int" />
+      <s:element name="ArrayOfMessagesBL" nillable="true" type="tns:ArrayOfMessagesBL" />
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="ArrayOfMsgReceptions" nillable="true" type="tns:ArrayOfMsgReceptions" />
+      <s:element name="LatestMsgReport" nillable="true" type="tns:LatestMsgReport" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetInboxCountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInboxCount" />
+  </wsdl:message>
+  <wsdl:message name="GetInboxCountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInboxCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOutBoxCountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOutBoxCount" />
+  </wsdl:message>
+  <wsdl:message name="GetOutBoxCountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOutBoxCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessages" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesWithChangeIsReadSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessagesWithChangeIsRead" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesWithChangeIsReadSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessagesWithChangeIsReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeMessageIsReadSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeMessageIsRead" />
+  </wsdl:message>
+  <wsdl:message name="ChangeMessageIsReadSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeMessageIsReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessagesByDate" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessagesByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesFilterByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessagesFilterByDate" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesFilterByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessagesFilterByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersMessagesByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUsersMessagesByDate" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersMessagesByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUsersMessagesByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStrSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessageStr" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStrSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessageStrResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveMessagesSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveMessages" />
+  </wsdl:message>
+  <wsdl:message name="RemoveMessagesSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveMessages2SoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveMessages2" />
+  </wsdl:message>
+  <wsdl:message name="RemoveMessages2SoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveMessages2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesReceptionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessagesReceptions" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesReceptionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessagesReceptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesAfterIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessagesAfterID" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesAfterIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessagesAfterIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesAfterIDJsonSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessagesAfterIDJson" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesAfterIDJsonSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessagesAfterIDJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestReceiveMsgSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLatestReceiveMsg" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestReceiveMsgSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLatestReceiveMsgResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInboxCountHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="isRead" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetInboxCountHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetOutBoxCountHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOutBoxCountHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="index" type="s:string" />
+    <wsdl:part name="count" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMessagesBL" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesWithChangeIsReadHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="index" type="s:string" />
+    <wsdl:part name="count" type="s:string" />
+    <wsdl:part name="isRead" type="s:string" />
+    <wsdl:part name="changeIsRead" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesWithChangeIsReadHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMessagesBL" />
+  </wsdl:message>
+  <wsdl:message name="ChangeMessageIsReadHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="msgIds" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangeMessageIsReadHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesByDateHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="index" type="s:string" />
+    <wsdl:part name="count" type="s:string" />
+    <wsdl:part name="dateFrom" type="s:string" />
+    <wsdl:part name="dateTo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesByDateHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMessagesBL" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesFilterByDateHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="index" type="s:string" />
+    <wsdl:part name="count" type="s:string" />
+    <wsdl:part name="dateFrom" type="s:string" />
+    <wsdl:part name="dateTo" type="s:string" />
+    <wsdl:part name="isRead" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesFilterByDateHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMessagesBL" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersMessagesByDateHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="index" type="s:string" />
+    <wsdl:part name="count" type="s:string" />
+    <wsdl:part name="dateFrom" type="s:string" />
+    <wsdl:part name="dateTo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersMessagesByDateHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMessagesBL" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStrHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="index" type="s:string" />
+    <wsdl:part name="count" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStrHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveMessagesHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+    <wsdl:part name="msgIds" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveMessagesHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="RemoveMessages2HttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+    <wsdl:part name="msgIds" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveMessages2HttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesReceptionsHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="msgId" type="s:string" />
+    <wsdl:part name="fromRows" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesReceptionsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMsgReceptions" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesAfterIDHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="count" type="s:string" />
+    <wsdl:part name="msgId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesAfterIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMessagesBL" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesAfterIDJsonHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="count" type="s:string" />
+    <wsdl:part name="msgId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesAfterIDJsonHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestReceiveMsgHttpGetIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="sender" type="s:string" />
+    <wsdl:part name="receiver" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestReceiveMsgHttpGetOut">
+    <wsdl:part name="Body" element="tns:LatestMsgReport" />
+  </wsdl:message>
+  <wsdl:message name="GetInboxCountHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="isRead" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetInboxCountHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetOutBoxCountHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOutBoxCountHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="index" type="s:string" />
+    <wsdl:part name="count" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMessagesBL" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesWithChangeIsReadHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="index" type="s:string" />
+    <wsdl:part name="count" type="s:string" />
+    <wsdl:part name="isRead" type="s:string" />
+    <wsdl:part name="changeIsRead" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesWithChangeIsReadHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMessagesBL" />
+  </wsdl:message>
+  <wsdl:message name="ChangeMessageIsReadHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="msgIds" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangeMessageIsReadHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesByDateHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="index" type="s:string" />
+    <wsdl:part name="count" type="s:string" />
+    <wsdl:part name="dateFrom" type="s:string" />
+    <wsdl:part name="dateTo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesByDateHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMessagesBL" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesFilterByDateHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="index" type="s:string" />
+    <wsdl:part name="count" type="s:string" />
+    <wsdl:part name="dateFrom" type="s:string" />
+    <wsdl:part name="dateTo" type="s:string" />
+    <wsdl:part name="isRead" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesFilterByDateHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMessagesBL" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersMessagesByDateHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="index" type="s:string" />
+    <wsdl:part name="count" type="s:string" />
+    <wsdl:part name="dateFrom" type="s:string" />
+    <wsdl:part name="dateTo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersMessagesByDateHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMessagesBL" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStrHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="index" type="s:string" />
+    <wsdl:part name="count" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageStrHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveMessagesHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+    <wsdl:part name="msgIds" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveMessagesHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="RemoveMessages2HttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+    <wsdl:part name="msgIds" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RemoveMessages2HttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesReceptionsHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="msgId" type="s:string" />
+    <wsdl:part name="fromRows" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesReceptionsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMsgReceptions" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesAfterIDHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="count" type="s:string" />
+    <wsdl:part name="msgId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesAfterIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMessagesBL" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesAfterIDJsonHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="location" type="s:string" />
+    <wsdl:part name="from" type="s:string" />
+    <wsdl:part name="count" type="s:string" />
+    <wsdl:part name="msgId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesAfterIDJsonHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestReceiveMsgHttpPostIn">
+    <wsdl:part name="username" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="sender" type="s:string" />
+    <wsdl:part name="receiver" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLatestReceiveMsgHttpPostOut">
+    <wsdl:part name="Body" element="tns:LatestMsgReport" />
+  </wsdl:message>
+  <wsdl:portType name="ReceiveSoap">
+    <wsdl:operation name="GetInboxCount">
+      <wsdl:input message="tns:GetInboxCountSoapIn" />
+      <wsdl:output message="tns:GetInboxCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOutBoxCount">
+      <wsdl:input message="tns:GetOutBoxCountSoapIn" />
+      <wsdl:output message="tns:GetOutBoxCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <wsdl:input message="tns:GetMessagesSoapIn" />
+      <wsdl:output message="tns:GetMessagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesWithChangeIsRead">
+      <wsdl:input message="tns:GetMessagesWithChangeIsReadSoapIn" />
+      <wsdl:output message="tns:GetMessagesWithChangeIsReadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMessageIsRead">
+      <wsdl:input message="tns:ChangeMessageIsReadSoapIn" />
+      <wsdl:output message="tns:ChangeMessageIsReadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesByDate">
+      <wsdl:input message="tns:GetMessagesByDateSoapIn" />
+      <wsdl:output message="tns:GetMessagesByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesFilterByDate">
+      <wsdl:input message="tns:GetMessagesFilterByDateSoapIn" />
+      <wsdl:output message="tns:GetMessagesFilterByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersMessagesByDate">
+      <wsdl:input message="tns:GetUsersMessagesByDateSoapIn" />
+      <wsdl:output message="tns:GetUsersMessagesByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStr">
+      <wsdl:input message="tns:GetMessageStrSoapIn" />
+      <wsdl:output message="tns:GetMessageStrSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMessages">
+      <wsdl:input message="tns:RemoveMessagesSoapIn" />
+      <wsdl:output message="tns:RemoveMessagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMessages2">
+      <wsdl:input message="tns:RemoveMessages2SoapIn" />
+      <wsdl:output message="tns:RemoveMessages2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesReceptions">
+      <wsdl:input message="tns:GetMessagesReceptionsSoapIn" />
+      <wsdl:output message="tns:GetMessagesReceptionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesAfterID">
+      <wsdl:input message="tns:GetMessagesAfterIDSoapIn" />
+      <wsdl:output message="tns:GetMessagesAfterIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesAfterIDJson">
+      <wsdl:input message="tns:GetMessagesAfterIDJsonSoapIn" />
+      <wsdl:output message="tns:GetMessagesAfterIDJsonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestReceiveMsg">
+      <wsdl:input message="tns:GetLatestReceiveMsgSoapIn" />
+      <wsdl:output message="tns:GetLatestReceiveMsgSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ReceiveHttpGet">
+    <wsdl:operation name="GetInboxCount">
+      <wsdl:input message="tns:GetInboxCountHttpGetIn" />
+      <wsdl:output message="tns:GetInboxCountHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOutBoxCount">
+      <wsdl:input message="tns:GetOutBoxCountHttpGetIn" />
+      <wsdl:output message="tns:GetOutBoxCountHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <wsdl:input message="tns:GetMessagesHttpGetIn" />
+      <wsdl:output message="tns:GetMessagesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesWithChangeIsRead">
+      <wsdl:input message="tns:GetMessagesWithChangeIsReadHttpGetIn" />
+      <wsdl:output message="tns:GetMessagesWithChangeIsReadHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMessageIsRead">
+      <wsdl:input message="tns:ChangeMessageIsReadHttpGetIn" />
+      <wsdl:output message="tns:ChangeMessageIsReadHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesByDate">
+      <wsdl:input message="tns:GetMessagesByDateHttpGetIn" />
+      <wsdl:output message="tns:GetMessagesByDateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesFilterByDate">
+      <wsdl:input message="tns:GetMessagesFilterByDateHttpGetIn" />
+      <wsdl:output message="tns:GetMessagesFilterByDateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersMessagesByDate">
+      <wsdl:input message="tns:GetUsersMessagesByDateHttpGetIn" />
+      <wsdl:output message="tns:GetUsersMessagesByDateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStr">
+      <wsdl:input message="tns:GetMessageStrHttpGetIn" />
+      <wsdl:output message="tns:GetMessageStrHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMessages">
+      <wsdl:input message="tns:RemoveMessagesHttpGetIn" />
+      <wsdl:output message="tns:RemoveMessagesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMessages2">
+      <wsdl:input message="tns:RemoveMessages2HttpGetIn" />
+      <wsdl:output message="tns:RemoveMessages2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesReceptions">
+      <wsdl:input message="tns:GetMessagesReceptionsHttpGetIn" />
+      <wsdl:output message="tns:GetMessagesReceptionsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesAfterID">
+      <wsdl:input message="tns:GetMessagesAfterIDHttpGetIn" />
+      <wsdl:output message="tns:GetMessagesAfterIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesAfterIDJson">
+      <wsdl:input message="tns:GetMessagesAfterIDJsonHttpGetIn" />
+      <wsdl:output message="tns:GetMessagesAfterIDJsonHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestReceiveMsg">
+      <wsdl:input message="tns:GetLatestReceiveMsgHttpGetIn" />
+      <wsdl:output message="tns:GetLatestReceiveMsgHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ReceiveHttpPost">
+    <wsdl:operation name="GetInboxCount">
+      <wsdl:input message="tns:GetInboxCountHttpPostIn" />
+      <wsdl:output message="tns:GetInboxCountHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOutBoxCount">
+      <wsdl:input message="tns:GetOutBoxCountHttpPostIn" />
+      <wsdl:output message="tns:GetOutBoxCountHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <wsdl:input message="tns:GetMessagesHttpPostIn" />
+      <wsdl:output message="tns:GetMessagesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesWithChangeIsRead">
+      <wsdl:input message="tns:GetMessagesWithChangeIsReadHttpPostIn" />
+      <wsdl:output message="tns:GetMessagesWithChangeIsReadHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMessageIsRead">
+      <wsdl:input message="tns:ChangeMessageIsReadHttpPostIn" />
+      <wsdl:output message="tns:ChangeMessageIsReadHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesByDate">
+      <wsdl:input message="tns:GetMessagesByDateHttpPostIn" />
+      <wsdl:output message="tns:GetMessagesByDateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesFilterByDate">
+      <wsdl:input message="tns:GetMessagesFilterByDateHttpPostIn" />
+      <wsdl:output message="tns:GetMessagesFilterByDateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersMessagesByDate">
+      <wsdl:input message="tns:GetUsersMessagesByDateHttpPostIn" />
+      <wsdl:output message="tns:GetUsersMessagesByDateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStr">
+      <wsdl:input message="tns:GetMessageStrHttpPostIn" />
+      <wsdl:output message="tns:GetMessageStrHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMessages">
+      <wsdl:input message="tns:RemoveMessagesHttpPostIn" />
+      <wsdl:output message="tns:RemoveMessagesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMessages2">
+      <wsdl:input message="tns:RemoveMessages2HttpPostIn" />
+      <wsdl:output message="tns:RemoveMessages2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesReceptions">
+      <wsdl:input message="tns:GetMessagesReceptionsHttpPostIn" />
+      <wsdl:output message="tns:GetMessagesReceptionsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesAfterID">
+      <wsdl:input message="tns:GetMessagesAfterIDHttpPostIn" />
+      <wsdl:output message="tns:GetMessagesAfterIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesAfterIDJson">
+      <wsdl:input message="tns:GetMessagesAfterIDJsonHttpPostIn" />
+      <wsdl:output message="tns:GetMessagesAfterIDJsonHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestReceiveMsg">
+      <wsdl:input message="tns:GetLatestReceiveMsgHttpPostIn" />
+      <wsdl:output message="tns:GetLatestReceiveMsgHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ReceiveSoap" type="tns:ReceiveSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetInboxCount">
+      <soap:operation soapAction="http://tempuri.org/GetInboxCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutBoxCount">
+      <soap:operation soapAction="http://tempuri.org/GetOutBoxCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <soap:operation soapAction="http://tempuri.org/GetMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesWithChangeIsRead">
+      <soap:operation soapAction="http://tempuri.org/GetMessagesWithChangeIsRead" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMessageIsRead">
+      <soap:operation soapAction="http://tempuri.org/ChangeMessageIsRead" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesByDate">
+      <soap:operation soapAction="http://tempuri.org/GetMessagesByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesFilterByDate">
+      <soap:operation soapAction="http://tempuri.org/GetMessagesFilterByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersMessagesByDate">
+      <soap:operation soapAction="http://tempuri.org/GetUsersMessagesByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStr">
+      <soap:operation soapAction="http://tempuri.org/GetMessageStr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMessages">
+      <soap:operation soapAction="http://tempuri.org/RemoveMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMessages2">
+      <soap:operation soapAction="http://tempuri.org/RemoveMessages2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesReceptions">
+      <soap:operation soapAction="http://tempuri.org/GetMessagesReceptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesAfterID">
+      <soap:operation soapAction="http://tempuri.org/GetMessagesAfterID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesAfterIDJson">
+      <soap:operation soapAction="http://tempuri.org/GetMessagesAfterIDJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestReceiveMsg">
+      <soap:operation soapAction="http://tempuri.org/GetLatestReceiveMsg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ReceiveSoap12" type="tns:ReceiveSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetInboxCount">
+      <soap12:operation soapAction="http://tempuri.org/GetInboxCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutBoxCount">
+      <soap12:operation soapAction="http://tempuri.org/GetOutBoxCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <soap12:operation soapAction="http://tempuri.org/GetMessages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesWithChangeIsRead">
+      <soap12:operation soapAction="http://tempuri.org/GetMessagesWithChangeIsRead" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMessageIsRead">
+      <soap12:operation soapAction="http://tempuri.org/ChangeMessageIsRead" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesByDate">
+      <soap12:operation soapAction="http://tempuri.org/GetMessagesByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesFilterByDate">
+      <soap12:operation soapAction="http://tempuri.org/GetMessagesFilterByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersMessagesByDate">
+      <soap12:operation soapAction="http://tempuri.org/GetUsersMessagesByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStr">
+      <soap12:operation soapAction="http://tempuri.org/GetMessageStr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMessages">
+      <soap12:operation soapAction="http://tempuri.org/RemoveMessages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMessages2">
+      <soap12:operation soapAction="http://tempuri.org/RemoveMessages2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesReceptions">
+      <soap12:operation soapAction="http://tempuri.org/GetMessagesReceptions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesAfterID">
+      <soap12:operation soapAction="http://tempuri.org/GetMessagesAfterID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesAfterIDJson">
+      <soap12:operation soapAction="http://tempuri.org/GetMessagesAfterIDJson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestReceiveMsg">
+      <soap12:operation soapAction="http://tempuri.org/GetLatestReceiveMsg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ReceiveHttpGet" type="tns:ReceiveHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetInboxCount">
+      <http:operation location="/GetInboxCount" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutBoxCount">
+      <http:operation location="/GetOutBoxCount" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <http:operation location="/GetMessages" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesWithChangeIsRead">
+      <http:operation location="/GetMessagesWithChangeIsRead" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMessageIsRead">
+      <http:operation location="/ChangeMessageIsRead" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesByDate">
+      <http:operation location="/GetMessagesByDate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesFilterByDate">
+      <http:operation location="/GetMessagesFilterByDate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersMessagesByDate">
+      <http:operation location="/GetUsersMessagesByDate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStr">
+      <http:operation location="/GetMessageStr" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMessages">
+      <http:operation location="/RemoveMessages" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMessages2">
+      <http:operation location="/RemoveMessages2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesReceptions">
+      <http:operation location="/GetMessagesReceptions" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesAfterID">
+      <http:operation location="/GetMessagesAfterID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesAfterIDJson">
+      <http:operation location="/GetMessagesAfterIDJson" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestReceiveMsg">
+      <http:operation location="/GetLatestReceiveMsg" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ReceiveHttpPost" type="tns:ReceiveHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetInboxCount">
+      <http:operation location="/GetInboxCount" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutBoxCount">
+      <http:operation location="/GetOutBoxCount" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <http:operation location="/GetMessages" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesWithChangeIsRead">
+      <http:operation location="/GetMessagesWithChangeIsRead" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMessageIsRead">
+      <http:operation location="/ChangeMessageIsRead" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesByDate">
+      <http:operation location="/GetMessagesByDate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesFilterByDate">
+      <http:operation location="/GetMessagesFilterByDate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersMessagesByDate">
+      <http:operation location="/GetUsersMessagesByDate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStr">
+      <http:operation location="/GetMessageStr" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMessages">
+      <http:operation location="/RemoveMessages" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveMessages2">
+      <http:operation location="/RemoveMessages2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesReceptions">
+      <http:operation location="/GetMessagesReceptions" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesAfterID">
+      <http:operation location="/GetMessagesAfterID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesAfterIDJson">
+      <http:operation location="/GetMessagesAfterIDJson" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLatestReceiveMsg">
+      <http:operation location="/GetLatestReceiveMsg" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Receive">
+    <wsdl:port name="ReceiveSoap" binding="tns:ReceiveSoap">
+      <soap:address location="http://api.payamak-panel.com/post/receive.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ReceiveSoap12" binding="tns:ReceiveSoap12">
+      <soap12:address location="http://api.payamak-panel.com/post/receive.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ReceiveHttpGet" binding="tns:ReceiveHttpGet">
+      <http:address location="http://api.payamak-panel.com/post/receive.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ReceiveHttpPost" binding="tns:ReceiveHttpPost">
+      <http:address location="http://api.payamak-panel.com/post/receive.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

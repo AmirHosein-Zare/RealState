@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="1">
+      <SearchApplicant Ref="2" type="Stimulsoft.Report.Dictionary.StiBusinessObject" isKey="true">
+        <Alias>SearchApplicant</Alias>
+        <BusinessObjects isList="true" count="0" />
+        <Category />
+        <Columns isList="true" count="12">
+          <value>Address,System.String</value>
+          <value>Foundation,System.Int32</value>
+          <value>FullAmount,System.Int64</value>
+          <value>FullName,System.String</value>
+          <value>KindNeed,System.String</value>
+          <value>KindUser,System.String</value>
+          <value>Meter,System.Int32</value>
+          <value>MeterAmount,System.Int64</value>
+          <value>MortgageAmount,System.Int64</value>
+          <value>RentAmount,System.Int64</value>
+          <value>Room,System.Byte</value>
+          <value>UserName,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Guid>9bdc87f6f3d849c98f6301fd442ea41f</Guid>
+        <Name>SearchApplicant</Name>
+      </SearchApplicant>
+    </BusinessObjects>
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="0" />
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Resources isList="true" count="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <Key>c63379bd29234f73b5c5dc3cbb6d9f83</Key>
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="3" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="1">
+        <TableSearchApplicant Ref="4" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid>9bdc87f6f3d849c98f6301fd442ea41f</BusinessObjectGuid>
+          <ClientRectangle>0,0.2,7.72,0.6</ClientRectangle>
+          <ColumnCount>11</ColumnCount>
+          <Components isList="true" count="22">
+            <TableSearchApplicant_Cell1 Ref="5" type="TableCell" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>0,0,0.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>B Nazanin,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSearchApplicant_Cell1</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>آدرس</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableSearchApplicant_Cell1>
+            <TableSearchApplicant_Cell2 Ref="6" type="TableCell" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>0.7,0,0.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>B Nazanin,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSearchApplicant_Cell2</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>زیر بنا</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableSearchApplicant_Cell2>
+            <TableSearchApplicant_Cell3 Ref="7" type="TableCell" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>1.4,0,0.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>B Nazanin,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSearchApplicant_Cell3</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>قیمت کل</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableSearchApplicant_Cell3>
+            <TableSearchApplicant_Cell4 Ref="8" type="TableCell" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>2.1,0,0.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>B Nazanin,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>4</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSearchApplicant_Cell4</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>متراژ</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableSearchApplicant_Cell4>
+            <TableSearchApplicant_Cell5 Ref="9" type="TableCell" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>2.8,0,0.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>B Nazanin,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>5</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSearchApplicant_Cell5</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>قیمت هر متر</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableSearchApplicant_Cell5>
+            <TableSearchApplicant_Cell6 Ref="10" type="TableCell" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>3.5,0,0.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>B Nazanin,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>6</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSearchApplicant_Cell6</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>قیمت رهن</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableSearchApplicant_Cell6>
+            <TableSearchApplicant_Cell7 Ref="11" type="TableCell" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>4.2,0,0.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>B Nazanin,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>7</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSearchApplicant_Cell7</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>قیمت اجاره</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableSearchApplicant_Cell7>
+            <TableSearchApplicant_Cell8 Ref="12" type="TableCell" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>4.9,0,0.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>B Nazanin,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>8</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSearchApplicant_Cell8</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>تعداد اتاق</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableSearchApplicant_Cell8>
+            <TableSearchApplicant_Cell9 Ref="13" type="TableCell" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>5.6,0,0.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>B Nazanin,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>9</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSearchApplicant_Cell9</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>نوع</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableSearchApplicant_Cell9>
+            <TableSearchApplicant_Cell10 Ref="14" type="TableCell" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>6.3,0,0.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>B Nazanin,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>10</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSearchApplicant_Cell10</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>کاربری</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableSearchApplicant_Cell10>
+            <TableSearchApplicant_Cell11 Ref="15" type="TableCell" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>7,0,0.72,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>B Nazanin,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>11</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSearchApplicant_Cell11</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>نوع کاربری</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableSearchApplicant_Cell11>
+            <TableSearchApplicant_Cell12 Ref="16" type="TableCell" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>0,0.3,0.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>12</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSearchApplicant_Cell12</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{SearchApplicant.Address}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableSearchApplicant_Cell12>
+            <TableSearchApplicant_Cell13 Ref="17" type="TableCell" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>0.7,0.3,0.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>13</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSearchApplicant_Cell13</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{SearchApplicant.Foundation}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableSearchApplicant_Cell13>
+            <TableSearchApplicant_Cell14 Ref="18" type="TableCell" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>1.4,0.3,0.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>14</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSearchApplicant_Cell14</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{SearchApplicant.FullAmount}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableSearchApplicant_Cell14>
+            <TableSearchApplicant_Cell15 Ref="19" type="TableCell" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>2.1,0.3,0.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>16</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSearchApplicant_Cell15</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{SearchApplicant.Meter}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableSearchApplicant_Cell15>
+            <TableSearchApplicant_Cell16 Ref="20" type="TableCell" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>2.8,0.3,0.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>17</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSearchApplicant_Cell16</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{SearchApplicant.MeterAmount}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableSearchApplicant_Cell16>
+            <TableSearchApplicant_Cell17 Ref="21" type="TableCell" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>3.5,0.3,0.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>18</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSearchApplicant_Cell17</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{SearchApplicant.MortgageAmount}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableSearchApplicant_Cell17>
+            <TableSearchApplicant_Cell18 Ref="22" type="TableCell" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>4.2,0.3,0.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>19</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSearchApplicant_Cell18</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{SearchApplicant.RentAmount}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableSearchApplicant_Cell18>
+            <TableSearchApplicant_Cell19 Ref="23" type="TableCell" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>4.9,0.3,0.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>20</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSearchApplicant_Cell19</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{SearchApplicant.Room}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableSearchApplicant_Cell19>
+            <TableSearchApplicant_Cell20 Ref="24" type="TableCell" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>5.6,0.3,0.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>21</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSearchApplicant_Cell20</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{SearchApplicant.KindNeed}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableSearchApplicant_Cell20>
+            <TableSearchApplicant_Cell21 Ref="25" type="TableCell" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>6.3,0.3,0.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>22</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSearchApplicant_Cell21</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{SearchApplicant.KindUser}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableSearchApplicant_Cell21>
+            <TableSearchApplicant_Cell22 Ref="26" type="TableCell" isKey="true">
+              <Brush>White</Brush>
+              <ClientRectangle>7,0.3,0.72,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Microsoft Sans Serif,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>23</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>TableSearchApplicant_Cell22</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{SearchApplicant.UserName}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </TableSearchApplicant_Cell22>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName isNull="true" />
+          <Filters isList="true" count="0" />
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <MinHeight>0.2</MinHeight>
+          <Name>TableSearchApplicant</Name>
+          <NumberID>24</NumberID>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <RowCount>2</RowCount>
+          <Sort isList="true" count="0" />
+        </TableSearchApplicant>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>c30c1acacbf847daaffb70fa34640a85</Guid>
+      <Margins>0.39,0.39,0.39,0.39</Margins>
+      <Name>Page1</Name>
+      <PageHeight>11</PageHeight>
+      <PageWidth>8.5</PageWidth>
+      <PaperSize>Letter</PaperSize>
+      <Report isRef="0" />
+    </Page1>
+  </Pages>
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>3/3/2022 3:19:33 AM</ReportChanged>
+  <ReportCreated>3/3/2022 3:06:18 AM</ReportCreated>
+  <ReportFile>E:\Amlak\Amlak\bin\Debug\SearchApplicant.mrt</ReportFile>
+  <ReportGuid>cf55112935c34b02bfc15bdf7bbfd228</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Inches</ReportUnit>
+  <ReportVersion>2019.4.2.0</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

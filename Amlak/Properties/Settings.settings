@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Amlak.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Amlak_SendWebService_Send" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://api.payamak-panel.com/post/Send.asmx</Value>
+    </Setting>
+    <Setting Name="Amlak_UserWebService_Users" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://api.payamak-panel.com/post/Users.asmx</Value>
+    </Setting>
+    <Setting Name="Amlak_ReceiveWebService_Receive" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://api.payamak-panel.com/post/receive.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
